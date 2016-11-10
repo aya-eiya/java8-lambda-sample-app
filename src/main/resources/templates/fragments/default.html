@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+    <head th:fragment="head">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <title th:text="${title}"></title>
+    </head>
+    <body>
+        <th:block th:fragment="headerNav">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <span class="navbar-brand">Java8LanmbdaSample</span>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a th:href="@{/}">Home</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a th:href="@{/register}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </th:block>
+
+        <th:block th:fragment="header">
+            <header>
+                <div class="container">
+                    <div class="page-header">
+                        <h1 th:text="${contentTitle}"></h1>
+                    </div>
+                </div>
+            </header>
+        </th:block>
+
+        <th:block th:fragment="center">
+            <div class="">
+            </div>
+        </th:block>
+        
+        <th:block th:fragment="left">
+            <div class="container mod-left-content">
+                <div>
+                    <ul th:if="${loginUser != null}" class="mod-user-status">
+                        <li class="mod-user-status-header" th:text="${displayName}"></li>
+                        <li class="mod-user-status-item" th:text="${age}"></li>
+                        <li class="mod-user-status-item" th:text="${hasTicket}"></li>
+                        <li class="mod-user-status-item" th:text="${loginTime}"></li>
+                    </ul>
+                    <ul th:if="${loginUser == null}" class="mod-user-status">
+                        <li class="mod-user-status-nothing">
+                            Please login or sign up.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </th:block>
+        
+        <th:block th:fragment="right">
+        </th:block>
+        
+        <th:block th:fragment="footer">
+            <footer class="mod-footer text-right">
+                <div class="container">
+                    <small class="text-muted">&copy; aya_eiya &amp; Astamuse.co.ltd.</small>
+                </div>
+            </footer>
+        </th:block>
+
+        <th:block th:fragment="footerScript">
+            <div id="x-loading-modal" class="modal fade" data-backdrop="static">
+                <div class="modal-dialog mod-loading">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <span class="state-loading_l"></span>
+                            <span class="state-loading-message x-text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script data-required="conf/app.conf"></script>
+            <script id="requireConf" th:src="@{/js/conf/require.conf.js}"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
+        </th:block>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:1.4.0'
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'org.akhikhl.gretty'
+
+sourceCompatibility = 1.8
+group = 'com.astamuse'
+version = '0.0.1'
+
+wrapper {
+  version = '3.1'
+}
+
+gretty {
+  springBoot = true
+  springBootVersion = '1.4.1.RELEASE'
+  managedClassReload = true
+  afterEvaluate {
+    appRunDebug {
+      debugPort = 5005
+      debugSuspend = true
+    }
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.thymeleaf:thymeleaf-spring4:3.0.2.RELEASE',
+          'org.springframework.session:spring-session:1.2.2.RELEASE',
+          'org.springframework:spring-orm:4.3.3.RELEASE',
+          'org.springframework:spring-aspects:4.3.3.RELEASE',
+          'com.google.guava:guava:20.+',
+          'org.hibernate:hibernate-core:5.2.3.Final',
+          'com.h2database:h2:1.4.+',
+          'org.aspectj:aspectjrt:1.8.+'
+
+  compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+

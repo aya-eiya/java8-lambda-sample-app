@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head th:replace="fragments/default :: head"></head>
+<body>
+    <div th:replace="fragments/default :: headerNav"></div>
+
+    <div class="mod-center-form container">
+        <div class="row" th:fragment="loginFormTab">
+            <div class="col-md-offset-3 col-md-1 mod-tab" th:classappend="${inLogin}?active:optional">
+                <a th:href="@{/login}">Login</a>
+            </div>
+            <div class="col-md-1 mod-tab" th:classappend="${inRegister}?active:optional">
+                <a th:href="@{/register}">Register</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 mod-form mod-login x-loginForm">
+                <ul>
+                    <li class="form-group"><input class="form-control x-accountName" name="accountName" type="email" placeholder="E-Mail  : example@mail.com"></li>
+                    <li class="form-group"><input class="form-control x-password" name="password" type="password" placeholder="Password: ****"></li>
+                </ul>
+                <div class="mod-btn-box">
+                    <button type="button" class="btn btn-primary x-submit">ログイン</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/default :: footer"></div>
+    <div th:replace="fragments/default :: footerScript"></div>
+    <script data-required="app/login"></script>
+</body>
+</html>

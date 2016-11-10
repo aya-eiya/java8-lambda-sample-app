@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head th:replace="fragments/default :: head"></head>
+<body>
+<div th:replace="fragments/default :: headerNav"></div>
+
+<div class="mod-center-form container">
+
+    <div th:replace="login/index :: loginFormTab"></div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6 mod-form mod-login">
+            <ul>
+                <li class="form-group"><input class="form-control x-accountName" name="accountName" type="email" placeholder="E-Mail  : example@mail.com"></li>
+                <li><hr></li>
+                <li class="form-group"><input class="form-control x-password" name="password" type="password" placeholder="Password: ****"></li>
+                <li class="form-group"><input class="form-control x-passwordConfirm" name="passwordConfirm" type="password" placeholder="Password Confirm: ****"></li>
+            </ul>
+            <div class="mod-btn-box">
+                <button type="button" class="btn btn-primary x-button">ログイン</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/default :: footer"></div>
+
+<div th:replace="fragments/default :: footerScript"></div>
+</body>
+</html>

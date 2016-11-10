@@ -1,0 +1,114 @@
+html {
+  position: relative;
+  overflow-x: hidden;
+  min-height: calc(100% - 1px);
+}
+
+body.mod-nav {
+  margin-bottom: 60px;
+}
+
+.mod-left-content {
+  z-index: 100;
+  position: fixed;
+  padding-top:10px;
+  margin-left:40px;
+  top:90px;
+  width:240px;
+}
+
+ul.mod-user-status {
+    background:#fcfcfc;
+    border-radius: 12px;
+    border : 1px solid #eee;
+    margin:0px;
+    padding:0px;
+}
+
+ul.mod-user-status>li[class*="mod-user-status-"]{
+    list-style-type: none;
+    padding:10px;
+    margin:0px;
+}
+ul.mod-user-status>li.mod-user-status-header{
+    height:18pt;
+    text-size:16pt;
+}
+ul.mod-user-status>li.mod-user-status-item{
+    height:14pt;
+    text-size:12pt;
+}
+ul.mod-user-status>li.mod-user-status-nothing{
+    height:240px;
+    padding-top:100px;
+    text-size:14pt;
+    text-align:center;
+}
+
+.mod-center-form{
+  margin-top:120px;
+  padding-bottom:12px;
+	text-align:center;
+}
+
+.mod-center-form ul{
+  margin:0px;
+  padding:0px;
+}
+.mod-center-form ul>li{
+  margin:0px 10%;
+  margin-bottom:12px;
+  width:100%;
+  list-style-type: none;
+}
+
+.mod-center-form .mod-form{
+  padding-top:30px;
+  border:1px solid #efefef;
+}
+
+.mod-login input[type=text],
+.mod-login input[type=email],
+.mod-login input[type=password],
+.mod-login hr{
+  width:80%;
+}
+.mod-login hr{
+  margin:0px;
+  padding:0px;
+}
+
+.mod-login .mod-btn-box{
+  margin-bottom:12px;
+}
+
+.mod-tab {
+  border:1px solid #efefef;
+  border-radius: 12px 12px 0px 0px;
+  padding-top:18pt;
+  padding-bottom:8px;
+  margin-bottom:-1px;
+  z-index:10;
+}
+
+.mod-tab.active {
+  border-bottom:1px solid #fff;
+}
+
+.mod-tab a{
+  font-size:12pt;
+}
+
+.mod-footer {
+  position: absolute;
+  bottom: -1px;
+  width: calc(100% + 1px);
+  height: 61px;
+  line-height: 60px;
+  color: #9d9d9d;
+  background-color:#222;
+}
+
+.mod-loading .modal-content{
+  top:30%;
+}
